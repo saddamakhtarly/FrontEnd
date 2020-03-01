@@ -1,0 +1,117 @@
+<html>
+<head>
+
+
+
+    <style>
+       /* ::-webkit-scrollbar
+        {
+            width: 10px;
+            
+        }
+        ::-webkit-scrollbar-thumb
+        {
+            background: linear-gradient(180deg, black, red, yellow);
+            border-radius: 50px;
+            border-top: 20px solid green;
+            border-bottom: 20px solid pink;
+          
+        }
+        ::-webkit-scrollbar-thumb:hover
+        {
+            background: linear-gradient(45deg, black, red, yellow);
+        }
+       */
+
+
+
+.dropdown
+{position: relative;
+    
+    display: inline-block;
+}
+.content
+{
+    display: none ;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+.content a
+{
+    color: black;
+display: block;
+ text-decoration: none;
+ background-color: rgb(228, 228, 228);
+ padding: 12px 16px;
+
+   
+   
+}
+.content a:hover
+{
+    background-color: coral;
+    transform: scale(1.1);
+}
+.dropdown:hover .content
+{
+    display: block;
+}
+.mybtn
+{
+    background-color: darkgreen;
+    color: darkgrey;
+    min-width: 160px;
+    height: 50px;
+}
+
+    </style>
+</head>
+<body>
+    <!-- Swiper.js
+    for image slide-->
+    
+
+<div class="dropdown">
+
+    <button type="button" class="mybtn"  onmousedown="onDonw(this)" onmouseout="onUp(this)">Click Me</button>
+    <div class="content" >
+        <a href="#">Link1</a> 
+        <a href="#">Link2</a> 
+        <a href="#">Link3</a> 
+        <a href="#">Link4</a> 
+    
+    
+    </div>
+
+</div>
+
+
+<div>This is Div Tag</div>
+
+<p id="check">This is P Tag</p>
+
+<script>
+
+ var total= document.getElementsByTagName("p");
+ document.getElementById("check").innerHTML= " your total p tag is" +total.length;
+
+
+function onDonw(obj)
+{
+    obj.style.background= "black";
+    obj.innerHTML="reales";
+}
+function onUp(obj)
+{
+    obj.style.background= "green";
+    obj.innerHTML="Thank you";
+}
+
+    </script>
+ 
+
+</body>
+</html>

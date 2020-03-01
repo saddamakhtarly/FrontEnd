@@ -1,0 +1,139 @@
+<html>
+<head>
+    <style>
+    .mybtn
+    {
+        position: relative;
+        min-width: 160px;
+        min-height: 50px;
+        background-color: coral;
+        color: white;
+        font-size: 20px;
+        z-index: 1;
+        overflow: hidden;
+     
+    }
+    .mybtn::before
+    {
+        position: absolute;
+        content: '';
+        width:160px;
+        height: 50px;
+        left:160px;
+        top:0px;
+        bottom: 0px;
+        right:0px;
+        background-color: black;
+        border-top-right-radius: 50px;
+        border-bottom-left-radius: 50px;
+        transition: 0.5s;
+        z-index: -1;
+    }
+    .mybtn:hover::before
+    {
+        left: 0px;
+        transition: 0.5s;
+    }
+    .stylebtn
+    {
+        position: relative;
+        min-width: 160px;
+        min-height: 50px;
+        border-bottom: 2px solid black;
+        background: transparent; 
+        border-left: none;
+        border-top: none;
+        border-right: none;
+        z-index: 1;
+        transition: 0.6s; 
+        overflow: hidden;
+        cursor: pointer;
+    }
+    .stylebtn::before
+    {
+        position: absolute;
+        content: '';
+        width:160px;
+        height: 50px;
+        left:0px;
+        top:50px;
+        bottom: px;
+        right:0px;
+        background-color: black;
+        transition: 0.5s; 
+        z-index: -1;
+    }
+    .stylebtn:hover::before
+    {
+        top: 0px;
+    }
+    .stylebtn:hover
+    {
+        color: white;
+        font-size: 20px;
+    }
+    #mylist
+    {
+        min-width: 260px;
+        min-height: 50px;  
+        padding: 12px 16px;
+    }
+    option
+    {
+        background-color: black;
+        color: white;
+       
+    }
+    
+    </style>
+
+    <script>
+    function countdown(secs, elem)
+    {
+     var saddam =   document.getElementById(elem);
+     saddam.innerHTML="Your downloading will be start after "+ secs+" seconds   ";
+        if(secs < 1)
+        {
+            clearTimeout(timer);
+            saddam.innerHTML="<h2>Time Complete....!!</h2>";
+            saddam.innerHTML+="<p> Click <a href='#'>Here</a> to Download</p> ";
+        }
+
+     secs--;
+     var timer= setTimeout(" countdown('"+secs+"','"+elem+"') ",1000);
+
+    }
+
+ 
+
+  
+    </script>
+
+</head>
+<body>
+  
+
+    <button type="button" class="mybtn"  onclick="countdown(10,'status')" >Download</button>
+    <p id="status"></p>
+    <button type="button" class="stylebtn" onclick="countrylist()">Download</button>
+<br /><br /><br /><br />
+
+<select id="mylist">
+
+
+</selec>
+
+<script>
+ var list = ["Pakistan","India", "England","Austrailia","Sri Lanka"];
+var elemnet = document.getElementById("mylist");
+    elemnet.innerHTML= "<option value='0'>~ Select Country ~</option>";
+    for(i=0; i < list.length; i++)
+    {
+         
+        elemnet.innerHTML+="<option value="+i+">"+list[i]+"</option>";
+    
+    }
+</script>
+
+</body>
+</html>
